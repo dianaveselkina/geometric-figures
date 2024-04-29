@@ -1,15 +1,10 @@
 <template>
   <div class="drag">
-    <GameBoard />
+    <img class="logo__img" src="img/square.png" alt="logo" />
   </div>
 </template>
 <script>
-import GameBoard from './components/GameBoard.vue';
 export default {
-  components: {
-    GameBoard,
-  },
-
   data() {
     return {};
   },
