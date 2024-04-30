@@ -1,15 +1,12 @@
 <template>
   <div class="drag">
-    <img class="logo__img" src="img/square.png" alt="logo" />
+    <img class="card__img" :src="imageUrl" alt="rose" />
   </div>
 </template>
-<script>
-export default {
-  data() {
-    return {};
-  },
-  methods: {},
-};
+<script setup>
+defineProps({
+  imageUrl: String,
+});
 </script>
 <style>
 .drag {

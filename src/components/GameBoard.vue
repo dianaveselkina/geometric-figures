@@ -1,6 +1,8 @@
 <template>
   <div class="board">
-    <DragBlock />
+    <DragBlock imageUrl="/img/square.png " />
+    <DragBlock imageUrl="/img/circle.png " />
+    <DragBlock imageUrl="/img/triangle.png" />
   </div>
 </template>
 <script>
@@ -18,8 +20,8 @@ export default {
 
 <style>
 .board {
-  width: 1200px;
-  height: 1200px;
+  width: 2400px;
+  height: 2200px;
   background-color: red;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="drag">
+  <div class="app">
     <GameBoard />
   </div>
 </template>
@@ -17,10 +17,10 @@ export default {
 };
 </script>
 <style>
-.drag {
+.app {
   padding: 8px 35px;
   cursor: pointer;
-  background-color: #ea4c14;
+  background-color: #382720;
   border-radius: 6px;
 }
 </style>
