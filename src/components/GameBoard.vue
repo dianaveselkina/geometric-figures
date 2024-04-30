@@ -4,9 +4,33 @@
     <div class="board__wrapper">
       <div class="playing__field">
         <div class="droppable">
-          <DroppableBlock imgUrl="/img/circle.png " />
-          <DroppableBlock imgUrl="/img/triangle.png " />
-          <DroppableBlock imgUrl="/img/square.png " />
+          <div class="droppable__circle">
+            <DroppableBlock id="circle" imgUrl="/img/circle.png " />
+            <input
+              class="circle"
+              type="checkbox"
+              id="circle"
+              v-model="checkedNames"
+            />
+          </div>
+          <div class="droppable__triangle">
+            <DroppableBlock id="triangle" imgUrl="/img/triangle.png " />
+            <input
+              class="triangle"
+              type="checkbox"
+              id="triangle"
+              v-model="checkedNames"
+            />
+          </div>
+          <div class="droppable__square">
+            <DroppableBlock id="square" imgUrl="/img/square.png " />
+            <input
+              class="square"
+              type="checkbox"
+              id="square"
+              v-model="checkedNames"
+            />
+          </div>
         </div>
         <div class="draggable">
           <DragBlock imageUrl="/img/square.png " />
@@ -32,7 +56,9 @@ export default {
     MyButton,
   },
   data() {
-    return {};
+    return {
+      checkedNames: [],
+    };
   },
   methods: {},
 };
@@ -80,5 +106,19 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.circle,
+.square,
+.triangle {
+  height: 100px;
+  width: 100px;
+}
+.droppable__circle,
+.droppable__triangle,
+.droppable__square {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 100px;
 }
 </style>
