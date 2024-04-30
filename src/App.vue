@@ -18,9 +18,9 @@ export default {
 </script>
 <style>
 .app {
-  padding: 8px 35px;
-  cursor: pointer;
-  background-color: #382720;
+  max-width: 2600px;
+  margin: 0 auto;
+  background-color: #ffffff;
   border-radius: 6px;
 }
 </style>
