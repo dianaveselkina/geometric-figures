@@ -5,7 +5,14 @@
       <div class="playing__field">
         <div class="droppable">
           <div class="droppable__circle">
-            <DroppableBlock id="circle" imgUrl="/img/circle.png " />
+            <DroppableBlock
+              @dragstart="startDrag($event, item)"
+              @drop="onDrop($event)"
+              @dragover.prevent
+              @dragenter.prevent
+              id="circle"
+              imgUrl="/img/circle.png "
+            />
             <input
               class="circle"
               type="checkbox"
@@ -14,7 +21,14 @@
             />
           </div>
           <div class="droppable__triangle">
-            <DroppableBlock id="triangle" imgUrl="/img/triangle.png " />
+            <DroppableBlock
+              @dragstart="startDrag($event, item)"
+              @drop="onDrop($event)"
+              @dragover.prevent
+              @dragenter.prevent
+              id="triangle"
+              imgUrl="/img/triangle.png "
+            />
             <input
               class="triangle"
               type="checkbox"
@@ -23,7 +37,14 @@
             />
           </div>
           <div class="droppable__square">
-            <DroppableBlock id="square" imgUrl="/img/square.png " />
+            <DroppableBlock
+              @dragstart="startDrag($event, item)"
+              @drop="onDrop($event)"
+              @dragover.prevent
+              @dragenter.prevent
+              id="square"
+              imgUrl="/img/square.png "
+            />
             <input
               class="square"
               type="checkbox"
@@ -33,7 +54,7 @@
           </div>
         </div>
         <div class="draggable">
-          <DragBlock imageUrl="/img/square.png " />
+          <DragBlock imageUrl="/img/square.png " draggable="true" />
           <DragBlock imageUrl="/img/circle.png " />
           <DragBlock imageUrl="/img/triangle.png " />
         </div>
@@ -55,12 +76,20 @@ export default {
     DroppableBlock,
     MyButton,
   },
+
   data() {
     return {
       checkedNames: [],
     };
   },
-  methods: {},
+  methods: {
+    startDrag(event) {
+      event.dataTransfer.setData('id', event.targe.id);
+    },
+    onDrop(event) {
+      event.dataTransfer.getData('id');
+    },
+  },
 };
 </script>
 
